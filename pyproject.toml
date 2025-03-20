@@ -7,4 +7,7 @@ authors = [
     { name = "Jan Okruta", email = "jan.okruta@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "django>=5.1.7",
+    "django-rest-framework>=0.1.0",
+]
