@@ -1,0 +1,10 @@
+[project]
+name = "shorteo"
+version = "0.1.0"
+description = "Service for shortening URLs"
+readme = "README.md"
+authors = [
+    { name = "Jan Okruta", email = "jan.okruta@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
