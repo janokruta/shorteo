@@ -42,9 +42,7 @@ class ShortenedURLViewSetTests(TestCase):
         url = reverse("url-shortener:url-list")
         response = self.client.post(url, {})
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        self.assertEqual(
-            response.json().get("original_url"), ["This field is required."]
-        )
+        self.assertEqual(response.json().get("original_url"), ["This field is required."])
 
     def test_create_shortened_url_invalid_original_url(self):
         url = reverse("url-shortener:url-list")
@@ -54,9 +52,7 @@ class ShortenedURLViewSetTests(TestCase):
         self.assertEqual(response.json().get("original_url"), ["Enter a valid URL."])
 
     @patch("url_shortener.utils._validate_short_code_length")
-    def test_create_shortened_url_invalid_code_length(
-        self, short_code_validator_mock: Mock
-    ):
+    def test_create_shortened_url_invalid_code_length(self, short_code_validator_mock: Mock):
         short_code_validator_mock.side_effect = ValueError
 
         url = reverse("url-shortener:url-list")
@@ -81,9 +77,7 @@ class ShortenedURLViewSetTests(TestCase):
             response_json.get("short_url"),
             f"http://testserver/{shortened_url_obj.short_code}",
         )
-        self.assertEqual(
-            response_json.get("original_url"), shortened_url_obj.original_url
-        )
+        self.assertEqual(response_json.get("original_url"), shortened_url_obj.original_url)
 
     def test_retrieve_shortened_url_not_found(self):
         url = reverse("url-shortener:url-detail", kwargs={"short_code": "nonexistent"})
@@ -107,9 +101,7 @@ class ShortenedURLViewSetTests(TestCase):
         response = self.client.delete(url)
         self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
         self.assertTrue(
-            ShortenedURL.objects.filter(
-                short_code=shortened_url_obj.short_code
-            ).exists()
+            ShortenedURL.objects.filter(short_code=shortened_url_obj.short_code).exists()
         )
 
     @parameterized.expand(["put", "patch"])
@@ -146,8 +138,6 @@ class ShortenedUrlRedirectViewTests(TestCase):
         self.assertEqual(response.url, shortened_url_obj.original_url)
 
     def test_resolve_short_code_not_found(self):
-        url = reverse(
-            "url-shortener:redirect", kwargs={"short_code": "nonexistent"}
-        )
+        url = reverse("url-shortener:redirect", kwargs={"short_code": "nonexistent"})
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)

@@ -25,9 +25,7 @@ class Migration(migrations.Migration):
                 ("original_url", models.URLField(max_length=2083)),
                 (
                     "short_code",
-                    models.CharField(
-                        db_index=True, editable=False, max_length=12, unique=True
-                    ),
+                    models.CharField(db_index=True, editable=False, max_length=12, unique=True),
                 ),
             ],
             options={

@@ -18,3 +18,13 @@ dev = [
     "parameterized",
     "ruff",
 ]
+
+[tool.ruff]
+line-length = 96
+target-version = "py313"
+
+[tool.ruff.format]
+indent-style = "space"
+line-ending = "auto"
+quote-style = "double"
+skip-magic-trailing-comma = false
