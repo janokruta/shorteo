@@ -8,3 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+# IDEs
+*.vscode
+.idea
+
+# DB
+db.sqlite3
