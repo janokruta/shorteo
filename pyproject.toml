@@ -6,8 +6,15 @@ readme = "README.md"
 authors = [
     { name = "Jan Okruta", email = "jan.okruta@gmail.com" }
 ]
-requires-python = ">=3.13"
+requires-python = "==3.13.*"
 dependencies = [
-    "django>=5.1.7",
-    "django-rest-framework>=0.1.0",
+    "django~=5.1",
+    "django-rest-framework",
+]
+
+[dependency-groups]
+dev = [
+    "ipython",
+    "parameterized",
+    "ruff",
 ]
