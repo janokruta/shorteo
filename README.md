@@ -83,7 +83,7 @@ Response:
 To use a shortened URL, simply access it in a browser or with a request:
 
 ```
-GET /{short_code}/
+GET /{short_code}
 ```
 
 This will redirect to the original URL.
