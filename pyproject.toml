@@ -16,6 +16,7 @@ dependencies = [
 dev = [
     "ipython",
     "parameterized",
+    "pre-commit",
     "ruff",
 ]
 

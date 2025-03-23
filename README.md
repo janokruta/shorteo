@@ -88,6 +88,16 @@ GET /{short_code}/
 
 This will redirect to the original URL.
 
+## Project Structure
+
+- `shorteo/` - Main Django project folder
+- `url_shortener/` - Django app containing core URL shortening functionality
+  - `models.py` - Contains the ShortenedURL model
+  - `views.py` - API and redirect views
+  - `serializers.py` - REST Framework serializers
+  - `utils.py` - Utility functions including short code generation
+  - `tests.py` - Comprehensive test suite
+
 ## Configuration
 
 You can configure the default short code length in your settings:
@@ -114,15 +124,11 @@ uv run ruff check .
 uv run ruff format --check .
 ```
 
-## Project Structure
+### Pre-commit
 
-- `shorteo/` - Main Django project folder
-- `url_shortener/` - Django app containing core URL shortening functionality
-  - `models.py` - Contains the ShortenedURL model
-  - `views.py` - API and redirect views
-  - `serializers.py` - REST Framework serializers
-  - `utils.py` - Utility functions including short code generation
-  - `tests.py` - Comprehensive test suite
+```bash
+uv run pre-commit install
+```
 
 ## Author
 
