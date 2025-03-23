@@ -1,6 +1,8 @@
 import random
 import string
 
+from django.conf import settings
+
 from url_shortener.models import ShortenedURL
 
 SHORT_CODE_ALPHABET = string.ascii_letters + string.digits
@@ -23,7 +25,7 @@ def generate_short_code(length: int = 8, max_attempts: int = 10) -> str:
 
 
 def _validate_short_code_length(length: int):
-    min_length = 6  # TODO: get from settings
+    min_length = settings.SHORT_CODE_MIN_LENGTH
     short_code_max_length = ShortenedURL.short_code.field.max_length
     if not min_length <= length <= short_code_max_length:
         raise ValueError(

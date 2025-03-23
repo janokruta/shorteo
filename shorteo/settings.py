@@ -123,4 +123,5 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+SHORT_CODE_MIN_LENGTH = 6
 SHORT_CODE_DEFAULT_LENGTH = 8

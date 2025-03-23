@@ -19,6 +19,6 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path("admin/", admin.site.urls),  # TODO: remove admin url?
+    path("admin/", admin.site.urls),
     path("", include("url_shortener.urls")),
 ]

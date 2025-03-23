@@ -104,7 +104,8 @@ You can configure the default short code length in your settings:
 
 ```python
 # In settings.py
-SHORT_CODE_DEFAULT_LENGTH = 8  # Default value
+SHORT_CODE_MIN_LENGTH = 6
+SHORT_CODE_DEFAULT_LENGTH = 8
 ```
 
 ## Development
