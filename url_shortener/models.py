@@ -15,5 +15,5 @@ class ShortenedURL(models.Model):
         verbose_name = "Shortened URL"
         verbose_name_plural = "Shortened URLs"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Shortened URL {self.short_code}"

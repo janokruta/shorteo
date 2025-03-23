@@ -9,7 +9,7 @@ from url_shortener.serializers import ShortenURLSerializer
 
 
 class ShortenedUrlViewSet(
-    mixins.CreateModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet
+    mixins.CreateModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet[ShortenedURL]
 ):
     """
     ViewSet for handling URL shortening operations.

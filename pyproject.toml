@@ -14,7 +14,10 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "django-stubs[compatible-mypy]",
+    "djangorestframework-stubs[compatible-mypy]",
     "ipython",
+    "mypy",
     "parameterized",
     "pre-commit",
     "ruff",
@@ -29,3 +32,18 @@ indent-style = "space"
 line-ending = "auto"
 quote-style = "double"
 skip-magic-trailing-comma = false
+
+[tool.mypy]
+exclude = [
+    "manage.py",
+    "test.*\\.py$",
+    ".*_test\\.py$",
+    "tests/",
+    "test/",
+]
+plugins = ["mypy_django_plugin.main", "mypy_drf_plugin.main"]
+python_version = "3.13"
+strict = true
+
+[tool.django-stubs]
+django_settings_module = "shorteo.settings"
