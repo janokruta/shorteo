@@ -25,6 +25,13 @@ class ShortenedUrlViewSet(
 
 
 class ShortenedUrlRedirectView(RedirectView):
+    """
+    View that handles redirecting short URLs to their original destinations.
+
+    This view takes a short_code from the URL path, looks up the corresponding
+    ShortenedURL object in the database, and redirects the user to the original URL.
+    """
+
     permanent = False
     query_string = True
 
